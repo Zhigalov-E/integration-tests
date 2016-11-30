@@ -16,18 +16,17 @@ import java.util.List;
 
 public class UserListSteps extends ScenarioSteps {
 
-    private final String US_DATE_FORMAT = "dd-MM-yyyy";
-    private final String RU_DATE_FORMAT = "yyyy-MM-dd";
+    private final DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     private UserListPage userListPage;
 
     @Step
-    public void checkTableRows(List<UserRow> expectedRows, String locale) throws ParseException {
+    public void goToUsersList() {
+        userListPage.open();
+    }
 
-        DateFormat dateFormat = new SimpleDateFormat(locale.contains("en")
-                ? US_DATE_FORMAT
-                : RU_DATE_FORMAT);
-
+    @Step
+    public void checkTableRows(List<UserRow> expectedRows) throws ParseException {
         List<UserRow> actualRows = new ArrayList<>();
         List<WebElement> rows = userListPage.getUsersTable().findElements(By.xpath(".//tr[td]"));
         for(int i = 0; i < rows.size() - 1; i++) {
