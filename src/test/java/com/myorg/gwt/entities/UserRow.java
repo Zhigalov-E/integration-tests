@@ -1,18 +1,16 @@
 package com.myorg.gwt.entities;
 
 
-import java.util.Date;
-
 public class UserRow {
     private String firstName;
     private String lastName;
-    private Date birthday;
+    private String birthDay;
     private String email;
 
-    public UserRow(String firstName, String lastName, Date birthday, String email) {
+    public UserRow(String firstName, String lastName, String birthDay, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthday = birthday;
+        this.birthDay = birthDay;
         this.email = email;
     }
 
@@ -32,12 +30,12 @@ public class UserRow {
         this.lastName = lastName;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getEmail() {
@@ -53,7 +51,7 @@ public class UserRow {
         return "UserRow{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", birthday=" + birthday +
+                ", birthDay='" + birthDay + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
@@ -67,7 +65,7 @@ public class UserRow {
 
         if (firstName != null ? !firstName.equals(userRow.firstName) : userRow.firstName != null) return false;
         if (lastName != null ? !lastName.equals(userRow.lastName) : userRow.lastName != null) return false;
-        if (birthday != null ? !birthday.equals(userRow.birthday) : userRow.birthday != null) return false;
+        if (birthDay != null ? !birthDay.equals(userRow.birthDay) : userRow.birthDay != null) return false;
         return email != null ? email.equals(userRow.email) : userRow.email == null;
 
     }
@@ -76,7 +74,7 @@ public class UserRow {
     public int hashCode() {
         int result = firstName != null ? firstName.hashCode() : 0;
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        result = 31 * result + (birthDay != null ? birthDay.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }

@@ -7,6 +7,6 @@ import org.openqa.selenium.WebDriver;
 public class BaseSerenityStory {
 
     @Managed(uniqueSession = true)
-    public WebDriver webdriver;
+    WebDriver webdriver;
 
 }

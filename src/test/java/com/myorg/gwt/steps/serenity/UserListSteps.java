@@ -8,15 +8,11 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserListSteps extends ScenarioSteps {
-
-    private final DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     private UserListPage userListPage;
 
@@ -34,7 +30,7 @@ public class UserListSteps extends ScenarioSteps {
             actualRows.add(new UserRow(
                     cells.get(0).getText(),
                     cells.get(1).getText(),
-                    dateFormat.parse(cells.get(2).getText()),
+                    cells.get(2).getText(),
                     cells.get(3).getText()
             ));
         }
